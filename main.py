@@ -1,23 +1,16 @@
-
-
 def main():
-    openFile("train.0.txt")
+    first = openFile("train.0.txt")
 
 
 def openFile(name):
-    #f = open(name, "r")
-    s = []
-    #for str in f:
-     #   f.readline()
-      #  print(len(str))
-       # s.append([str])
-    #print(s)
-
-    with open(name, 'r') as file:
-        for line in file:
-            text = line.sp
-            s.append(text)
-    print(s)
+    f = open(name, "r")
+    testList = []
+    for itr in f:
+        itr.rstrip("\n")
+        testList.append(itr)
+    f.close()
+    print(len(testList))
+    return testList
 
 
 if __name__ == '__main__':
