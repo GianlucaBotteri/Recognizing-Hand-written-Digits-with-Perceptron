@@ -1,13 +1,13 @@
 def main():
-    first = openFile("train.0.txt")
+    first = openFile("train.3.txt")
 
 
 def openFile(name):
     f = open(name, "r")
     testList = []
     for itr in f:
-        itr.rstrip("\n")
-        testList.append(itr)
+        tmp = [float(n) for n in itr.split(',')]
+        testList.append(tmp)
     f.close()
     print(len(testList))
     return testList
