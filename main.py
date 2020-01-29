@@ -1,17 +1,25 @@
+import function
+import random
+
+
 def main():
-    first = openFile("train.3.txt")
+    firstDigit = "9"
+    secondDigit = "3"
+    first = function.openFile("train." + firstDigit + ".txt")
+    second = function.openFile("train." + secondDigit + ".txt")
     # TODO crea altre funzioni per creare il dataset e sposta il main
+    dataset = createDataset(first, second)
 
 
-def openFile(name):
-    f = open(name, "r")
-    testList = []
-    for itr in f:
-        tmp = [float(n) for n in itr.split(',')]
-        testList.append(tmp)
-    f.close()
-    print(len(testList))
-    return testList
+def createDataset(firstList, secondList):
+    firstDict = {tuple(x): 1 for x in firstList}
+    secondDict = {tuple(y): -1 for y in secondList}
+    firstDict.update(secondList)
+
+    keyList = list(firstDict.keys())
+    random.shuffle(keyList)
+    dataset = {i:firstDict[i] for i in keyList}
+    return dataset
 
 
 def dualPerceptron():
