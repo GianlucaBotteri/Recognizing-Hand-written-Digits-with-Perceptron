@@ -1,5 +1,4 @@
 import function
-import random
 
 
 def main():
@@ -8,18 +7,7 @@ def main():
     first = function.openFile("train." + firstDigit + ".txt")
     second = function.openFile("train." + secondDigit + ".txt")
     # TODO crea altre funzioni per creare il dataset e sposta il main
-    dataset = createDataset(first, second)
-
-
-def createDataset(firstList, secondList):
-    firstDict = {tuple(x): 1 for x in firstList}
-    secondDict = {tuple(y): -1 for y in secondList}
-    firstDict.update(secondList)
-
-    keyList = list(firstDict.keys())
-    random.shuffle(keyList)
-    dataset = {i:firstDict[i] for i in keyList}
-    return dataset
+    dataset = function.createDataset(first, second)
 
 
 def dualPerceptron():
