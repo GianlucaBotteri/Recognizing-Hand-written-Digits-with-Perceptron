@@ -11,20 +11,8 @@ def main():
 
     examples = list(dataset.keys())
     R = perceptron.computeR(examples)
-    gamma = 0.5
-    dualFormPerceptron(dataset, R, gamma)
-
-
-def dualFormPerceptron(dataset, R, gamma):
-    b = 0
-    examples = list(dataset.keys())
-    print(R)
-    alfa = [0] * len(examples)
-    while True:
-        errors = 0
-        if errors == 0:
-            break
-    return alfa, b
+    gamma = 2
+    perceptron.dualFormPerceptron(dataset, R, gamma)
 
 
 # TODO creare funzione testPerceptron
