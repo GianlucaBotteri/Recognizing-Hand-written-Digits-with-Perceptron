@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import function
 import perceptron
 
@@ -26,7 +27,7 @@ def main():
     gammaList = []  # Lista che terrà tutti i valori di gamma usati
     errorList = []  # Lista con il numero di errori per ogni valore di gamma
     iterList = []  # Lista che ricorda il numero di iterazione in fase di training per ogni gamma
-    for g in range(int(2*R), 1, -1):
+    for g in range(38, 1, -4):
         gammaList.append(g)
         print("Il valore di gamma è:", g)
         alfa, b, iterations = perceptron.dualFormPerceptron(dataset, R, g)
@@ -38,6 +39,17 @@ def main():
 
     gammaList.reverse()
     errorList.reverse()
+    iterList.reverse()
+
+    plt.plot(gammaList, errorList)
+    plt.xlabel("Valori di gamma")
+    plt.ylabel("Numero di errori")
+    plt.show()
+
+    plt.plot(gammaList, iterList)
+    plt.xlabel("Valori di gamma")
+    plt.ylabel("Numero di iterazioni")
+    plt.show()
 
 
 if __name__ == '__main__':
