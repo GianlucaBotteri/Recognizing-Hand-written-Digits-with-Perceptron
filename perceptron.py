@@ -18,6 +18,7 @@ def dualFormPerceptron(dataset, R, gamma):
     examples = list(dataset.keys())
     alfa = [0] * len(examples)
     errors = -1  # Inizializzo il numero di errori ad un valore fittizio per entrare nel ciclo while
+    iterations = 0
     while errors != 0:
         errors = 0  # Azzero il numero di errori prima dell'esecuzione del ciclo for
         for i in range(len(examples)):
@@ -31,7 +32,8 @@ def dualFormPerceptron(dataset, R, gamma):
                 alfa[i] += 1
                 b += dataset[examples[i]]*math.pow(R, 2)
                 errors += 1  # Incremento il numero di errori
-    return alfa, b
+        iterations += 1
+    return alfa, b, iterations
 
 
 def testPerceptron(testData, alfa, b, gamma):
