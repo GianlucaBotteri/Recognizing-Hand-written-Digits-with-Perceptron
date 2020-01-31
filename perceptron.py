@@ -1,4 +1,5 @@
 import math
+import function
 
 
 def computeR(examples):
@@ -23,13 +24,26 @@ def dualFormPerceptron(dataset, R, gamma):
             summation = 0
             for j in range(len(examples)):
                 module = 0
-                for k in range(256):  # 256 sono il numero di valori fissati per ogni esempio del dataset
+                for k in range(len(examples[j])):  # In questo dataset sarà sempre 256
                     module += math.pow((examples[j])[k] - (examples[i])[k], 2)
                 summation += alfa[j]*dataset[examples[j]]*math.exp(-gamma*module)  # Calcola la sommatoria per ogni j
             if dataset[examples[i]]*(summation+b) <= 0:  # Controlla se la classificazione è sbagliata
                 alfa[i] += 1
                 b += dataset[examples[i]]*math.pow(R, 2)
                 errors += 1  # Incremento il numero di errori
-    print(alfa)
-    print(b)
     return alfa, b
+
+
+def testPerceptron(testData, alfa, b, gamma):
+    tests = list(testData.keys())
+    errors = 0
+    for i in range(len(tests)):
+        summation = 0
+        for j in range(len(tests)):
+            module = 0
+            for k in range(len(tests[j])):
+                module += math.pow((tests[j])[k] - (tests[i])[k], 2)
+            summation += alfa[j] * testData[tests[j]] * math.exp(-gamma * module)
+        if testData[tests[i]] != function.sgn(summation+b):
+            errors += 1
+    return errors
