@@ -32,7 +32,7 @@ def main():
     # Lista che ricorda il numero di iterazione in fase di training per ogni gamma
     iterList = []
 
-    for g in range(38, 1, -4):
+    for g in range(2, 38, 4):
         gammaList.append(g)
         print("Il valore di gamma è:", g)
         alfa, b, iterations = perceptron.dualFormPerceptron(dataset, R, g)
@@ -41,10 +41,6 @@ def main():
         print("La percentuale di errori è del:", (err/length)*100, "%")
         errorList.append(err)
         iterList.append(iterations)
-
-    gammaList.reverse()
-    errorList.reverse()
-    iterList.reverse()
 
     plt.plot(gammaList, errorList)
     plt.xlabel("Valori di gamma")
