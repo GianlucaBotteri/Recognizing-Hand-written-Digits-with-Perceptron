@@ -11,12 +11,12 @@ def main():
     print(" ")
 
     # Vengono recuperati i dati per il training
-    first = function.openTrainFile("train." + firstDigit + ".txt")
-    second = function.openTrainFile("train." + secondDigit + ".txt")
+    first = function.openTrainFile("res/"+"train." + firstDigit + ".txt")
+    second = function.openTrainFile("res/"+"train." + secondDigit + ".txt")
 
     dataset = function.createDataset(first, second)  # Dataset di training, gli esempi sono in ordine casuale
 
-    testAll = function.openTestFile("zip.test.txt")
+    testAll = function.openTestFile("res/"+"zip.test.txt")
     test = function.cutTest(testAll, firstDigit, secondDigit)  # Dataset di testing, include solo le due cifre utili
     length = len(test)
     print("Gli esempi del testing sono:", length)
