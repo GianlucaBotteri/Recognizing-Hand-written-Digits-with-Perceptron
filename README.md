@@ -16,17 +16,41 @@ Train | 1194 | 1005 | 731 | 658 | 652 | 556 | 664 | 645 | 542 | 644 | 7291
 Test | 359 | 264 | 198 | 166 | 200 | 160 | 170 | 147 | 166 | 177 | 2007
 
 Il progetto è composto da 3 file .py e una cartella "res", all'interno della quale troviamo i file del dataset. Gli
- esperimenti si baseranno sul classificare tra due classi delle 10 disponibile, come ad esempio 1 e 7.<br>
+ esperimenti si baseranno sul classificare tra due classi delle 10 disponibili, come ad esempio 1 e 7.<br>
 
 **function.py**: contiene funzioni utili, in modo da avere codice riutilizzabile e leggibile.
-- openTrainFile permette di salvare il contenuto di un file di training in una lista, in cui ad ogni sottolista 
+- _openTrainFile_ permette di salvare il contenuto di un file di training in una lista, in cui ad ogni sottolista 
 (corrispondente ad una riga del file) corrisponde un esempio. 
-- openTestFile è molto simile alla funzione sopra descritta, e trasforma il file contentente tutte le cifre da testare
+- _openTestFile_ è molto simile alla funzione sopra descritta, e trasforma il file contentente tutte le cifre da testare
 in una lista di liste.
-- cutTest prende in ingresso la lista sopra creata, e crea due liste in cui sono presenti solo le due cifre che vogliamo
+- _cutTest_ prende in ingresso la lista sopra creata, e crea due liste in cui sono presenti solo le due cifre che vogliamo
 classiicare. Ritorna passando queste due liste a createDataset.
-- createDataset prende in ingresso due liste, associa alla prima l'etichetta 1, mentre alla seconda -1. Crea un 
+- _createDataset_ prende in ingresso due liste, associa alla prima l'etichetta 1, mentre alla seconda -1. Crea un 
 dizionario in cui sono presenti gli esempi con ognuno la sua etichetta. Gli esempi sono in ordine casuale tramite la 
 chiamata a random() della libreria random. Il seme è stato specificato in modo da avere sempre lo stesso shuffle ad ogni
 riproduzione dell'esperimento.
-- sgn implementa la funzione sgn(x), in particolare sgn(0)=1.
+- _sgn_ implementa la funzione sgn(x), in particolare sgn(0)=1.
+
+All'interno di **perceptron.py** troviamo metodi per il training ed il testing del perceptron:
+- _computeR_ per calcolare il valore di R una sola volta e poi riutilizzarlo. È il massimo modulo dei vettori usati in 
+fase di training.
+-_dualFormPerceptron_ implementa l'algoritmo modificato in forma duale per il **training**, richiedendo in ingresso il
+dataset, il valore di R e gamma. Restituisce i valori di alfa e b per il testing, ed il numero di iterazioni necessarie
+a non commettere errori in questa fase. La condizione _if_ verifica se l'esempio è stato classificato in modo errato 
+(<= 0), ed in tal caso aggiorna i valori di alfa e b.
+- _testPerceptron_ permette di testare quanto fatto nella fase precedente. Richiede in ingresso il dataset per il 
+**testing**, quello usato per il training, i valori di alfa e b. Restituisce il numero di errori commessi. _tests_ sono
+gli esempi del testing senza i loro label, mentre _trains_ quelli del training. Per ogni elemento dei test, si "compara"
+con quelli del training per ottenere la classificazione.
+
+**main.py** contiene il main per riprodurre quanto fatto. <br>
+_firstDigit_ e _secondDigit_ identificano le cifre che dovranno essere classificate, già modificando queste è possibile
+ottenere risultati. <br>
+_gammaList_ contiene alcuni valori di interesse per il parametro gamma. Cambiando questa lista è possibile variare i
+risultati delle sperimentazioni, in particolare si sarà più accurati con valori vicini a zero di gamma. Essendo il tempo
+di run molto lungo, è possibile ridurre la lista ad un solo elemento.<br>
+Infine, i risultati ottenuti, salvati in liste, vengono plottati usando la libreria matplotlib. Viene mostrato il 
+rapporto tra gamma ed il numero di errori in testing, e tra gamma ed il numero di iterazioni in training.
+
+I risultati ottenuti mostrano come a valori molto bassi di gamma corrispondano meno errori (sotto il 2%) e un numero 
+minore di iterazioni.
