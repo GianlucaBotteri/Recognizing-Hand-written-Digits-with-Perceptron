@@ -23,12 +23,15 @@ def main():
     length = len(test)
     print("Gli esempi nel testing sono:", length)
 
-    examples = list(dataset.keys())  # Lista di tutti gli esempi nel dataset, senza il loro label
+    # Lista di tutti gli esempi nel dataset, senza il loro label
+    examples = list(dataset.keys())
     R = perceptron.computeR(examples)  # Calcola il valore di R
     print("Il valore di R è:", R)
     gammaList = []  # Lista che terrà tutti i valori di gamma usati
     errorList = []  # Lista con il numero di errori per ogni valore di gamma
-    iterList = []  # Lista che ricorda il numero di iterazione in fase di training per ogni gamma
+    # Lista che ricorda il numero di iterazione in fase di training per ogni gamma
+    iterList = []
+
     for g in range(38, 1, -4):
         gammaList.append(g)
         print("Il valore di gamma è:", g)
