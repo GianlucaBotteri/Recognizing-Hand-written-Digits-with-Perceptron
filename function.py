@@ -21,6 +21,7 @@ def openTestFile(name):
     return valueList
 
 
+# cutTest rimuove dalla lista del testing le cifre non utilizzate, e poi ritorna chiamando createDataset
 def cutTest(testAll, fDigit, sDigit):
     testFirst = []
     testSecond = []
@@ -32,6 +33,8 @@ def cutTest(testAll, fDigit, sDigit):
     return createDataset(testFirst, testSecond)
 
 
+# Questa funzione prende in ingresso due liste, associa ad ognuna un label e poi crea un dizionario
+# in cui gli elementi delle liste sono mischiati tra loro, per non avere prima tutti gli 1 e poi -1
 def createDataset(firstList, secondList):
     firstDict = {tuple(x): 1 for x in firstList}
     secondDict = {tuple(y): -1 for y in secondList}

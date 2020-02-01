@@ -14,12 +14,14 @@ def main():
     first = function.openTrainFile("res/"+"train." + firstDigit + ".txt")
     second = function.openTrainFile("res/"+"train." + secondDigit + ".txt")
 
-    dataset = function.createDataset(first, second)  # Dataset di training, gli esempi sono in ordine casuale
+    # Dataset di training, gli esempi sono in ordine casuale
+    dataset = function.createDataset(first, second)
 
     testAll = function.openTestFile("res/"+"zip.test.txt")
-    test = function.cutTest(testAll, firstDigit, secondDigit)  # Dataset di testing, include solo le due cifre utili
+    # Dataset di testing, include solo le due cifre utili
+    test = function.cutTest(testAll, firstDigit, secondDigit)
     length = len(test)
-    print("Gli esempi del testing sono:", length)
+    print("Gli esempi nel testing sono:", length)
 
     examples = list(dataset.keys())  # Lista di tutti gli esempi nel dataset, senza il loro label
     R = perceptron.computeR(examples)  # Calcola il valore di R
