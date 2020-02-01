@@ -17,21 +17,24 @@ def dualFormPerceptron(dataset, R, gamma):
     b = 0
     examples = list(dataset.keys())
     alfa = [0] * len(examples)
-    errors = -1  # Inizializzo il numero di errori ad un valore fittizio per entrare nel ciclo while
+    # Inizializzo il numero di errori per entrare nel ciclo while
+    errors = -1
     iterations = 0
     while errors != 0:
-        errors = 0  # Azzero il numero di errori prima dell'esecuzione del ciclo for
+        errors = 0  # Azzero il numero di errori prima dell'esecuzione del ciclo
         for i in range(len(examples)):
             summation = 0
             for j in range(len(examples)):
                 module = 0
                 for k in range(len(examples[j])):  # In questo dataset sarà sempre 256
                     module += math.pow((examples[j])[k] - (examples[i])[k], 2)
-                summation += alfa[j]*dataset[examples[j]]*math.exp(-gamma*module)  # Calcola la sommatoria per ogni j
-            if dataset[examples[i]]*(summation+b) <= 0:  # Controlla se la classificazione è sbagliata
+                # Calcola la sommatoria per ogni j
+                summation += alfa[j]*dataset[examples[j]]*math.exp(-gamma*module)
+            # Controlla se la classificazione è sbagliata
+            if dataset[examples[i]]*(summation+b) <= 0:
                 alfa[i] += 1
                 b += dataset[examples[i]]*math.pow(R, 2)
-                errors += 1  # Incremento il numero di errori
+                errors += 1  # Incrementa il numero di errori
         iterations += 1
     return alfa, b, iterations
 
