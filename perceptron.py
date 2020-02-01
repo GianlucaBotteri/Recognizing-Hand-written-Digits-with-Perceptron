@@ -47,7 +47,7 @@ def testPerceptron(testData, trainData, alfa, b, gamma):
         summation = 0
         for j in range(len(trains)):
             module = 0
-            for k in range(len(tests[j])):
+            for k in range(len(trains[j])):
                 module += math.pow((trains[j])[k] - (tests[i])[k], 2)
             summation += alfa[j] * trainData[trains[j]] * math.exp(-gamma * module)
         if testData[tests[i]] != function.sgn(summation+b):
