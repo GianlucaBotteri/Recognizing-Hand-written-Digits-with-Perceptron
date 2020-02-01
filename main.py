@@ -38,7 +38,7 @@ def main():
         alfa, b, iterations = perceptron.dualFormPerceptron(dataset, R, g)
         err = perceptron.testPerceptron(test, alfa, b, g)
         print("Il numero di errori in fase di test è:", err)
-        print("La percentuale di errori è del:", err / length*100, "%")
+        print("La percentuale di errori è del:", (err/length)*100, "%")
         errorList.append(err)
         iterList.append(iterations)
 
