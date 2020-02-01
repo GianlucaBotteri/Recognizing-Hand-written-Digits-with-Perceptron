@@ -27,16 +27,16 @@ def main():
     examples = list(dataset.keys())
     R = perceptron.computeR(examples)  # Calcola il valore di R
     print("Il valore di R è:", R)
-    gammaList = []  # Lista che terrà tutti i valori di gamma usati
+    # Lista che terrà tutti i valori di gamma usati
+    gammaList = [0.01, 0.05, 0.1, 0.4, 1, 2, 5, 10, 15, 30]
     errorList = []  # Lista con il numero di errori per ogni valore di gamma
     # Lista che ricorda il numero di iterazione in fase di training per ogni gamma
     iterList = []
 
-    for g in range(1, 35, 1):
-        gammaList.append(g)
+    for g in gammaList:
         print("Il valore di gamma è:", g)
         alfa, b, iterations = perceptron.dualFormPerceptron(dataset, R, g)
-        err = perceptron.testPerceptron(test, alfa, b, g)
+        err = perceptron.testPerceptron(test, dataset, alfa, b, g)
         print("Il numero di errori in fase di test è:", err)
         print("La percentuale di errori è del:", (err/length)*100, "%")
         errorList.append(err)

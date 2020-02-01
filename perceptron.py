@@ -39,16 +39,17 @@ def dualFormPerceptron(dataset, R, gamma):
     return alfa, b, iterations
 
 
-def testPerceptron(testData, alfa, b, gamma):
-    tests = list(testData.keys())
+def testPerceptron(testData, trainData, alfa, b, gamma):
+    tests = list(testData.keys())  # Esempi di test, senza etichetta
+    trains = list(trainData.keys())  # Esempi di train, senza etichetta
     errors = 0
     for i in range(len(tests)):
         summation = 0
-        for j in range(len(tests)):
+        for j in range(len(trains)):
             module = 0
             for k in range(len(tests[j])):
-                module += math.pow((tests[j])[k] - (tests[i])[k], 2)
-            summation += alfa[j] * testData[tests[j]] * math.exp(-gamma * module)
+                module += math.pow((trains[j])[k] - (tests[i])[k], 2)
+            summation += alfa[j] * trainData[trains[j]] * math.exp(-gamma * module)
         if testData[tests[i]] != function.sgn(summation+b):
             errors += 1
     return errors
