@@ -41,6 +41,7 @@ def createDataset(firstList, secondList):
     firstDict.update(secondDict)
 
     keyList = list(firstDict.keys())
+    random.seed(2)  # Inizializzzo il seed per avere ad ogni run lo stesso shuffle
     random.shuffle(keyList)
 
     dataset = {i: firstDict[i] for i in keyList}

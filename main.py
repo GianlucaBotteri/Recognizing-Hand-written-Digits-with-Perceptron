@@ -32,7 +32,7 @@ def main():
     # Lista che ricorda il numero di iterazione in fase di training per ogni gamma
     iterList = []
 
-    for g in range(2, 38, 4):
+    for g in range(1, 35, 1):
         gammaList.append(g)
         print("Il valore di gamma è:", g)
         alfa, b, iterations = perceptron.dualFormPerceptron(dataset, R, g)
