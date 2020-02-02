@@ -28,7 +28,7 @@ def main():
     R = perceptron.computeR(examples)  # Calcola il valore di R
     print("Il valore di R è:", R)
     # Lista che terrà tutti i valori di gamma usati
-    gammaList = [0.005, 0.01, 0.05, 0.1, 0.4, 1, 2, 5, 10, 15, 30]
+    gammaList = [0.005, 0.01, 0.05, 0.1, 0.3, 0.7, 1, 2, 5, 7, 10, 15, 22, 30]
     errorList = []  # Lista con il numero di errori per ogni valore di gamma
     # Lista che ricorda il numero di iterazione in fase di training per ogni gamma
     iterList = []

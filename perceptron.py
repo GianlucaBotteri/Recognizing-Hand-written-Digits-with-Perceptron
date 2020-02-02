@@ -6,7 +6,7 @@ def computeR(examples):
     modules = []
     for l in range(len(examples)):
         mod = 0
-        for i in range(examples[l]):
+        for i in range(len(examples[l])):
             mod += math.pow((examples[l])[i], 2)
         modules.append(math.sqrt(mod))
     R = max(modules)
