@@ -39,9 +39,9 @@ dataset, il valore di R e gamma. Restituisce i valori di alfa e b per il testing
 a non commettere errori in questa fase. La condizione _if_ verifica se l'esempio è stato classificato in modo errato 
 (<= 0), ed in tal caso aggiorna i valori di alfa e b.
 - _testPerceptron_ permette di testare quanto fatto nella fase precedente. Richiede in ingresso il dataset per il 
-**testing**, quello usato per il training, i valori di alfa e b. Restituisce il numero di errori commessi. _tests_ sono
-gli esempi del testing senza i loro label, mentre _trains_ quelli del training. Per ogni elemento dei test, si "compara"
-con quelli del training per ottenere la classificazione.
+**testing**, quello usato per il training, i valori di alfa e b. Restituisce il numero di errori commessi. <br>
+_tests_ sono gli esempi del testing senza i loro label, mentre _trains_ quelli del training. 
+Per ogni elemento dei test, si "compara" con quelli del training per ottenere la classificazione.
 
 **main.py** contiene il main per riprodurre quanto fatto. <br>
 _firstDigit_ e _secondDigit_ identificano le cifre che dovranno essere classificate, già modificando queste è possibile
