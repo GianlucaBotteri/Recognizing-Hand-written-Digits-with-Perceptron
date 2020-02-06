@@ -4,8 +4,8 @@ import perceptron
 
 
 def main():
-    firstDigit = "5"
-    secondDigit = "6"
+    firstDigit = "1"
+    secondDigit = "7"
     print("Il primo carattere da riconoscere è:", firstDigit)
     print("Il secondo carattere da riconoscere è:", secondDigit)
     print(" ")
