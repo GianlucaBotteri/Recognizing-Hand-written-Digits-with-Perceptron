@@ -46,11 +46,30 @@ con quelli del training per ottenere la classificazione.
 **main.py** contiene il main per riprodurre quanto fatto. <br>
 _firstDigit_ e _secondDigit_ identificano le cifre che dovranno essere classificate, già modificando queste è possibile
 ottenere risultati. <br>
-_gammaList_ contiene alcuni valori di interesse per il parametro gamma. Cambiando questa lista è possibile variare i
-risultati delle sperimentazioni, in particolare si sarà più accurati con valori vicini a zero di gamma. Essendo il tempo
-di run molto lungo, è possibile ridurre la lista ad un solo elemento.<br>
+_gammaList_ contiene alcuni valori di interesse per il parametro gamma, questi sono: 
+0.05, 0.2, 0.7, 1, 2, 5, 7, 10, 15, 22, 30, 60.
+Cambiando questa lista è possibile variare i risultati delle sperimentazioni, in particolare si sarà più accurati con 
+valori di gamma compresi tra 0 e 5. 
+Essendo il tempo di run molto lungo, è possibile ridurre la lista ad un solo elemento.<br>
 Infine, i risultati ottenuti, salvati in liste, vengono plottati usando la libreria matplotlib. Viene mostrato il 
-rapporto tra gamma ed il numero di errori in testing, e tra gamma ed il numero di iterazioni in training.
+rapporto tra gamma ed il numero di errori in testing, e tra gamma ed il numero di iterazioni in training. <br>
+I risultati del run mostreranno il valore di gamma, il numero di errori e la percentuale di errore su tutto il dataset
+di testing.
 
-I risultati ottenuti mostrano come a valori molto bassi di gamma corrispondano meno errori (sotto il 2%) e un numero 
-minore di iterazioni.
+I risultati ottenuti mostrano come a valori bassi ( < 7 ) di gamma corrispondano meno errori (sotto il 2%) e un numero 
+minore di iterazioni. <br>
+Ad esempio, classificando 1 e 7 i risultati ottenuti sono:
+Valore gamma | N° errori | % Errore
+--- | --- | --- 
+0.05 | 6 | 1.46 | 
+0.2 | 9 | 2.19 |
+0.7 | 9 | 2.19 |
+1 | 9 | 2.19 |
+2 | 9 | 2.19 |
+5 | 8 | 1.95 |
+7 | 13 | 3.16 |
+10 | 21 | 5.11 |
+15 | 38 | 9.25 |
+22 | 61 | 14.84 |
+30 | 79 | 19.22 |
+60 | 138 | 33.58 |
