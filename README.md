@@ -34,7 +34,7 @@ riproduzione dell'esperimento.
 All'interno di **perceptron.py** troviamo metodi per il training ed il testing del perceptron:
 - _computeR_ per calcolare il valore di R una sola volta e poi riutilizzarlo. È il massimo modulo dei vettori usati in 
 fase di training.
--_dualFormPerceptron_ implementa l'algoritmo modificato in forma duale per il **training**, richiedendo in ingresso il
+- _dualFormPerceptron_ implementa l'algoritmo modificato in forma duale per il **training**, richiedendo in ingresso il
 dataset, il valore di R e gamma. Restituisce i valori di alfa e b per il testing, ed il numero di iterazioni necessarie
 a non commettere errori in questa fase. La condizione _if_ verifica se l'esempio è stato classificato in modo errato 
 (<= 0), ed in tal caso aggiorna i valori di alfa e b.
