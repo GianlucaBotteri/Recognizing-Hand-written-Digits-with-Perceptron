@@ -59,6 +59,7 @@ di testing.
 I risultati ottenuti mostrano come a valori bassi ( < 7 ) di gamma corrispondano meno errori (sotto il 2%) e un numero 
 minore di iterazioni. <br>
 Ad esempio, classificando 1 e 7 i risultati ottenuti sono:
+
 Valore gamma | N° errori | % Errore
 --- | --- | --- 
 0.05 | 6 | 1.46 | 
@@ -73,3 +74,4 @@ Valore gamma | N° errori | % Errore
 22 | 61 | 14.84 |
 30 | 79 | 19.22 |
 60 | 138 | 33.58 |
+
