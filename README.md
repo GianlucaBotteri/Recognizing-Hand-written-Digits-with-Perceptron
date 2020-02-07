@@ -43,8 +43,7 @@ _tests_ sono gli esempi del testing senza i loro label, mentre _trains_ quelli d
 Per ogni elemento dei test, si "compara" con quelli del training per ottenere la classificazione.
 
 **main.py** contiene il main per riprodurre quanto fatto. <br>
-_firstDigit_ e _secondDigit_ identificano le cifre che dovranno essere classificate, già modificando queste è possibile
-ottenere risultati. <br>
+Assegnando _firstDigit_ e _secondDigit_ si scelgono le cifre che verranno classificate. <br>
 _gammaList_ contiene alcuni valori di interesse per il parametro gamma, questi sono: 
 0.05, 0.2, 0.7, 1, 2, 5, 7, 10, 15, 22, 30, 60.
 Cambiando questa lista è possibile variare i risultati delle sperimentazioni, in particolare si sarà più accurati con 
