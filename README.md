@@ -4,7 +4,8 @@ Perceptron, seguendo la descrizione fornita al capitolo 2 di "An Introduction to
 Machines and Other Kernel-based Learning Methods", Cristianini & Shawe-Taylor, 2002. <br>
 L'algoritmo descritto è stato modificato, inserendo un valore esponenziale con parametro **gamma**, invece 
 che un prodotto scalare. <br>
-Scopo del lavoro è quello di implementare una versione modificata del Perceptron in forma duale, e poi di validarne l'efficacia e studiarne il comportamento al variare del parametro **gamma**. <br>
+Scopo del lavoro è quello di implementare una versione modificata del Perceptron in forma duale, e poi di validarne 
+l'efficacia e studiarne il comportamento al variare del parametro **gamma**, con gamma > 0. <br>
 Il dataset alla base dello studio è **ZIP code**, reperibile [qui](http://web.stanford.edu/~hastie/ElemStatLearn/), e 
 contiene scansioni normalizzate di cifre scritte a mano. È già diviso nelle porzioni di training e testing.
 La tabelle sottostante riporta la distribuzione delle cifre nelle due parti: <br>
