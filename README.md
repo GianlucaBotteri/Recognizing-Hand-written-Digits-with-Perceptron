@@ -23,7 +23,7 @@ Il progetto è composto da 3 file .py e una cartella "res", all'interno della qu
 - _openTestFile_ è molto simile alla funzione sopra descritta, e trasforma il file contentente tutte le cifre da testare
 in una lista di liste.
 - _cutTest_ prende in ingresso la lista sopra creata, e crea due liste in cui sono presenti solo le due cifre che vogliamo
-classiicare. Ritorna passando queste due liste a createDataset.
+classificare. Ritorna passando queste due liste a createDataset.
 - _createDataset_ prende in ingresso due liste, associa alla prima l'etichetta 1, mentre alla seconda -1. Crea un 
 dizionario in cui sono presenti gli esempi con ognuno la sua etichetta. Gli esempi sono in ordine casuale tramite la 
 chiamata a random() della libreria random. Il seme è stato specificato in modo da avere sempre lo stesso shuffle ad ogni
