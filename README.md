@@ -74,3 +74,4 @@ Valore gamma | N° errori | % Errore
 30 | 79 | 19.22 |
 60 | 138 | 33.58 |
 
+Una breve relazione su quanto fatto è disponibile [qui](https://drive.google.com/file/d/1YQMryzO4XI9en9iSSYd0oalM8Ct0jUjx/view?usp=sharing)
